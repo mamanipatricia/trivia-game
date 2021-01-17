@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #eee;
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  min-width: 1024px;
+}
+.title {
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  text-transform: uppercase;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background: white;
+}
+form > label {
+  text-align: center;
+  font-size: 1.5rem;
+}
+form > input {
+  padding: 8px 10px;
+}
+form > button {
+  padding: 9px 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #eccf99;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+form > button:hover {
+  background: #f2ebdf;
+}
+
+.play-again {
+  padding: 17px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #5f5da0;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  width: 150px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.play-again:hover {
+  background: #8b89d8;
+}
+.wrapper {
+  padding: 30px;
+  background: #95a7b3;
+}
+.topics-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 15px;
+  row-gap: 10px;
+  background: #e2d3ae;
+  padding: 20px;
+}
+.topic {
+  border-radius: 7px;
+  background: #eee;
+  border: 1px solid #ccc;
+  min-width: 180px;
+  height: 80px;
+  margin: 3px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topic:hover {
+  cursor: pointer;
+  background: #fefefe;
+}
+.topic-selected {
+  background: #c62348 !important;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); */
+}
+
+.question-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  background: bisque;
+  padding: 20px;
+}
+.box-answer {
+  background: #eee;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  max-width: 500px;
+  text-align: center;
+  cursor: pointer;
+}
+.box-answer:hover {
+  background: #ccc;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+.answers-container {
+  margin: 15px 5px 15px;
+}
+.question-title {
+  font-size: 34px;
+  font-weight: 500;
+}
+.selected-answer {
+  background: gray;
+}
+.correct-answer {
+  background: #5fb75f;
+  padding: 5px;
+  border-radius: 5px;
+}
+.incorrect-answer {
+  background: #e28383;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* buttons */
+.button-styles {
+  padding: 10px;
+  min-width: 100px;
+  cursor: pointer;
+}
+/* .previous-button {
+}
+.next-button {
+  
+} */
+
+.actions-buttons {
+  max-width: 250px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  display: flex;
+}
+.question-body {
+}
+.results-wrapper {
+  background: #d8d8c0;
+  max-width: 753px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+}
+.question-result {
+  background: #eee;
+  border-radius: 8px;
+  padding: 5px;
+  border: 1px solid #3c3c3c;
+}
+.question-result > h2 {
+  margin-bottom: 12px;
+}
+.question-result > p {
+  padding: 5px;
+  margin-bottom: 3px;
+}
+.question-result > p:last-child {
+  margin-bottom: 0;
+}
+.question-result > p.correct-answer,
+.question-result > p.incorrect-answer {
+  color: white;
+  font-weight: bold;
+}
+.question-result-timeout {
+  border-color: #f17a7a;
+  background: rgba(255, 186, 186, 0.7);
+}
+
+.countdown {
+  position: absolute;
+  top: 20px;
+  left: 94%;
+  font-size: 5rem;
+}
+.countdown-animated {
+  transform: scale(1) translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  animation-name: seiky;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transition: all 0.33s ease-in;
+}
+@keyframes seiky {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+.score {
+  margin: 0 auto;
+}
+svg {
+  filter: drop-shadow(rgba(148, 49, 51, 0.6) 0px 4px 12px);
+}
+.circle-chart__circle {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+.circle-chart__circle:not(.no-animation) {
+  animation: circle-chart-fill 0.4s reverse;
+}
+
+@keyframes circle-chart-fill {
+  to {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.text-svg {
+  fill: #3c3c3c;
+  font-size: 12px;
+  font-weight: bold;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
